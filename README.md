@@ -1,4 +1,4 @@
-# Project Title
+# MaskTrack
 
 The [MaskTrack method](https://arxiv.org/abs/1612.02646) is the baseline for state-of-the-art methods in video object segmentation like [Video Object Segmentation with Re-identification](https://arxiv.org/abs/1708.00197) and[ Lucid Data Dreaming for Multiple Object Tracking] (https://arxiv.org/abs/1703.09554). The top three methods in [DAVIS 2017 challenge](https://davischallenge.org/challenge2017/index.html) were based on the MaskTrack method. However, no open source code is available for the MaskTrack method. Here I provide the MaskTrack method with following specifications:
 1. The code gives a score of 0.466 on the DAVIS 2017 test-dev dataset. J-mean is 0.440 and F-mean is 0.492.
