@@ -38,25 +38,25 @@ If you are not using conda as a package manager, refer to the yml file and insta
 Please refer to the following instructions:
 
 A. Offline training data generation
-0. Download the DAVIS 17 train+val dataset from: https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip
-1. Go to generating_masks/offline_training/script_multiple_objs.m and change the base_path variable to point to the DAVIS 2017 dataset (train+val)
-2. Run script_multiple_objs.m (This will generate the deformations needed for offline training)
+* Download the DAVIS 17 train+val dataset from: https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-trainval-480p.zip
+* Go to generating_masks/offline_training/script_multiple_objs.m and change the base_path variable to point to the DAVIS 2017 dataset (train+val)
+* Run script_multiple_objs.m (This will generate the deformations needed for offline training)
 
 B. Setting paths for python files
-Go to training/path.py and change the paths returned by the following methods:
-	a. db_root_dir(): Point this to the DAVIS 17 test dataset (download from: https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-test-dev-480p.zip)
-	b. db_offline_train_root_dir(): Point this to the DAVIS 17 train+val dataset
+* Go to training/path.py and change the paths returned by the following methods:
+1. db_root_dir(): Point this to the DAVIS 17 test dataset (download from: https://data.vision.ee.ethz.ch/csergi/share/davis/DAVIS-2017-test-dev-480p.zip)
+2. db_offline_train_root_dir(): Point this to the DAVIS 17 train+val dataset
 
 C. Offline training
-Run training/train_offline.py with appropriate parameters. Recommended: --NoLabels 2 --lr 0.001 --wtDecay 0.001 --epochResume 0 --epochs 15 --batchSize 6
+* Run training/train_offline.py with appropriate parameters. Recommended: --NoLabels 2 --lr 0.001 --wtDecay 0.001 --epochResume 0 --epochs 15 --batchSize 6
 
 D. Online Training data generation
-1. Go to generating_masks/online_training/script_DAVIS17_test_dev.m and change required paths.
-2. Run the script with 12 iterations (can be varied) as argument: run script_DAVIS17_test_dev(12)
+* Go to generating_masks/online_training/script_DAVIS17_test_dev.m and change required paths.
+* Run the script with 12 iterations (can be varied) as argument: run script_DAVIS17_test_dev(12)
 
 E. Online Training and testing
-1. Run training/train_online.py with appropriate parameters. Recommended: --NoLabels 2 --lr 0.0025 --wtDecay 0.0001 --seqName aerobatics --parentEpochResume 8 --epochsOnline 10 --noIterations 5 --batchSize 2
-2. Results are stored in training/models17_DAVIS17_test/lr_xxx_wd_xxx/seq_name
+* Run training/train_online.py with appropriate parameters. Recommended: --NoLabels 2 --lr 0.0025 --wtDecay 0.0001 --seqName aerobatics --parentEpochResume 8 --epochsOnline 10 --noIterations 5 --batchSize 2
+* Results are stored in training/models17_DAVIS17_test/lr_xxx_wd_xxx/seq_name
 
 ## License
 
@@ -72,3 +72,4 @@ This code was produced during my internship at Nanyang Technological University 
 4. Template of Readme.md file: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2
 
 I would like to thank K.K. Maninis for providing this code: https://github.com/kmaninis/OSVOS-PyTorch for reference.
+
